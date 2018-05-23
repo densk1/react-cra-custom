@@ -72,7 +72,15 @@ module.exports = {
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
-    modules: ['node_modules', paths.appNodeModules].concat(
+    alias: {
+      // client: path.resolve(__dirname, 'client/'),
+      // container: 'client/container/',
+      // presentation: path.resolve(__dirname, 'client/presentation/'),
+      // Support React Native Web
+      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
+      'react-native': 'react-native-web',
+    },
+    modules: ['node_modules', paths.appNodeModules, 'client'].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
@@ -83,14 +91,7 @@ module.exports = {
     // `web` extension prefixes have been added for better support
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
-    alias: {
-      client: path.resolve(__dirname, 'client/'),
-      container: path.resolve(__dirname, 'client/container/'),
-      presentation: path.resolve(__dirname, 'client/presentation/'),
-      // Support React Native Web
-      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web',
-    },
+
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
@@ -109,6 +110,7 @@ module.exports = {
 
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
+      /*
       {
         test: /\.(js|jsx|mjs)$/,
         enforce: 'pre',
@@ -117,13 +119,13 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              
             },
             loader: require.resolve('eslint-loader'),
           },
         ],
         include: paths.appSrc,
       },
+      */
       {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
