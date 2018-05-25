@@ -1,0 +1,16 @@
+
+/*
+THEMING BOOTSTRAP
+https://getbootstrap.com/docs/4.0/getting-started/theming/
+*/
+
+$theme-colors: (
+  "indian": indianred,
+);
+
+/*
+// REMOVE THEME COLORS
+$theme-colors: map-remove($theme-colors, "success", "info", "danger");
+*/
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

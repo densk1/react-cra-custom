@@ -21,11 +21,9 @@
   "rules": {
     "no-underscore-dangle": [2, { "allow": ["__REDUX_DEVTOOLS_EXTENSION__", "_id"] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "import/no-unresolved": [0, 
-      "error",
-      {
-        "ignore": [ "container/", "presentation/" ]
-      }
-    ]
+    "jsx-a11y/anchor-is-valid": ["error", {
+      "components": ["Link"],
+      "specialLink": ["to"]
+    }]
   }
 }

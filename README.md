@@ -15,6 +15,7 @@
 
 ##### Client - React
 > axios
+> Bootstrap
 
 ##### Server - Express
 > nodemon
