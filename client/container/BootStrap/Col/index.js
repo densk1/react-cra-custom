@@ -2,7 +2,7 @@ import React from 'react';
 import { string, node, number } from 'prop-types';
 import styleMaker from '../utils/bootstrapStyleMaker';
 
-const Col = ({
+function Col({
   children,
   col,
   xs,
@@ -12,7 +12,7 @@ const Col = ({
   xl,
   className,
   ...rest
-}) => {
+}) {
   let classN = 'col ';
   if (col) classN += `col-${col} `;
   if (xs) classN += `col-xs-${xs} `;
@@ -20,7 +20,6 @@ const Col = ({
   if (md) classN += `col-md-${md} `;
   if (lg) classN += `col-lg-${lg} `;
   if (xl) classN += `col-xl-${xl} `;
-
   return (
     <div
       className={
@@ -31,8 +30,7 @@ const Col = ({
       {children}
     </div>
   );
-};
-
+}
 
 Col.displayName = 'Column';
 Col.defaultProps = {

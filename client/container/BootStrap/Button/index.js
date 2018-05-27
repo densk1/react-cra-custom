@@ -2,10 +2,10 @@ import React from 'react';
 import { func, string, bool, shape } from 'prop-types';
 import styleMaker from '../utils/bootstrapStyleMaker';
 
-const Button = ({
+function Button({
   className, onClick, label, lg,
   sm, block, disabled, theme, outline, style, ...rest
-}) => {
+}) {
   let btn = 'btn ';
   if (theme && outline) {
     btn += `btn-outline-${theme} `;
@@ -29,7 +29,7 @@ const Button = ({
       {label}
     </button>
   );
-};
+}
 
 Button.displayName = 'Button';
 Button.defaultProps = {
@@ -42,7 +42,7 @@ Button.defaultProps = {
   style: {},
 };
 Button.propTypes = {
-  className: '',
+  className: string,
   onClick: func.isRequired,
   label: string.isRequired,
   lg: bool,

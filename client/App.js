@@ -7,33 +7,35 @@ import {
 import './App.scss';
 
 import NavBar from './presentation/NavBar';
+import Header from './presentation/Header';
 import Footer from './presentation/Footer';
+import Form from './container/BootStrap/Form';
 
-const Foo = () => <h1>Foo</h1>;
-const Bar = () => <h1>Bar</h1>;
-
+const Foo = () => <Form />;
+const Bar = () => <Header />;
 
 const linkArray = [
   { label: 'Foo', route: '/foo' },
   { label: 'Bar', route: '/bar' },
 ];
 
-const App = () => (
-  <Fragment>
-    <BrowserRouter basename="/" >
-      <Fragment>
-        <NavBar linkArray={linkArray} />
-        <Switch>
-          <Route exact path="/foo" component={Foo} />
-          <Route exact path="/bar" component={Bar} />
-        </Switch>
-        <Switch>
+function App() {
+  return (
+    <Fragment>
+      <BrowserRouter basename="/" >
+        <Fragment>
+          <NavBar linkArray={linkArray} />
+          <Switch>
+            <Route exact path="/foo" component={Foo} />
+            <Route exact path="/bar" component={Bar} />
+          </Switch>
+          <Switch>
             <Route path="/" component={Footer} />
-        </Switch>
-      </Fragment>
-    </BrowserRouter>
-    <button className="btn btn-outline-indian m-1 ">Button</button>
-  </Fragment>
-);
+          </Switch>
+        </Fragment>
+      </BrowserRouter>
+    </Fragment>
+  );
+}
 
 export default App;

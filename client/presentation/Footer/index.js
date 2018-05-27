@@ -7,31 +7,55 @@ import Button from '../../container/BootStrap/Button';
 import Row from '../../container/BootStrap/Row';
 import Col from '../../container/BootStrap/Col';
 
-const Footer = () => (
-  <Jumbotron fluid>
-    <Container fluid>
-      <Row>
-        <Col center sm={4} style={{ backgroundColor: 'red' }}>Red</Col>
-        <Col center sm={4} style={{ backgroundColor: 'green' }}>Green</Col>
-        <Col center sm={4} >
-          <Button
-            theme="indian"
-            onClick={() => alert('clicked fn')}
-            label="Click"
-            outline
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col col={12} >
-          <div className="text-muted small text-center p-2">
-            Copyright 2018 &copy;
-          </div>
-        </Col>
-      </Row>
-    </Container>
-  </Jumbotron>
-);
+function Footer() {
+  return (
+    <Jumbotron fluid>
+      <Container fluid>
+        <Row>
+          <Col center sm={3}>
+            <Button
+              className="pl-5 pr-5"
+              theme="orange"
+              onClick={() => alert('clicked fn')}
+              label="Click"
+            />
+          </Col>
+          <Col center sm={3}>
+            <Button
+              className="pl-5 pr-5"
+              theme="secondary"
+              onClick={() => alert('clicked fn')}
+              label="Click"
+            />
+          </Col>
+          <Col center sm={3}>
+            <Button
+              className="pl-5 pr-5"
+              theme="primary"
+              onClick={() => alert('clicked fn')}
+              label="Click"
+            />
+          </Col>
+          <Col center sm={3}>
+            <Button
+              className="pl-5 pr-5"
+              theme="indian"
+              onClick={() => alert('clicked fn')}
+              label="Click"
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col col={12} >
+            <div className="text-muted small text-center p-2">
+              Copyright 2018 &copy;
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </Jumbotron>
+  );
+}
 
 Footer.displayName = 'Footer';
 

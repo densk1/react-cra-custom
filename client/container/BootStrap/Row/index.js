@@ -3,13 +3,15 @@ import { string, node } from 'prop-types';
 
 import styleMaker from '../utils/bootstrapStyleMaker';
 
-const Row = ({
+function Row({
   children, className, ...rest
-}) => (
-  <div className={`row ${styleMaker({ ...rest })}${className} `}>
-    {children}
-  </div>
-);
+}) {
+  return (
+    <div className={`row ${styleMaker({ ...rest })}${className} `}>
+      {children}
+    </div>
+  );
+}
 
 Row.displayName = 'RowBootStrap';
 Row.defaultProps = {

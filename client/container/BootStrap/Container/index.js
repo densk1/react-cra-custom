@@ -1,15 +1,24 @@
 import React from 'react';
 import { bool, node, string } from 'prop-types';
+import styleMaker from '../utils/bootstrapStyleMaker';
 
-
-const Container = ({ fluid, children, className, ...rest }) => {
+function Container({
+  fluid, children, className, img, ...rest
+}) {
   const isFluid = fluid ? 'container-fluid' : 'container';
   return (
-    <div className={`${isFluid} ${className}`.trim()} {...rest}>
+    <div className={`${isFluid} ${className} ${styleMaker(rest)}`.trim()}
+      style={img ?{
+        backgroundImage: `url(${img})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      } : {}}
+    >
       {children}
     </div>
   );
-};
+}
 
 Container.displayName = 'Container';
 Container.defaultProps = {

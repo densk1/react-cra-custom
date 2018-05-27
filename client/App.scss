@@ -5,8 +5,11 @@ https://getbootstrap.com/docs/4.0/getting-started/theming/
 */
 
 $theme-colors: (
-  "indian": indianred,
+  "indian": #cd5c5c,
+  "orange": #ffa500,
+  "gold": #ffd700
 );
+
 
 /*
 // REMOVE THEME COLORS
@@ -14,3 +17,20 @@ $theme-colors: map-remove($theme-colors, "success", "info", "danger");
 */
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+.form-control:focus, .form-control:active {
+  border-color: indianred;
+  box-shadow: 0px 0px 0px 0px rgba(205,92,92,0.4);
+}
+
+/* 
+  // Orlagh: 
+  - Bootstrap Colors
+  - Hotel Custom Colors
+  - Typography / Fonts
+  - Components
+      - Border Radius and component styles
+  - Wedding Photo style
+  
+
+*/

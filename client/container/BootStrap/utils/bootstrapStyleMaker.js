@@ -1,8 +1,8 @@
-const boostrapStyleMaker = ({
+function boostrapStyleMaker({
   center, left, right, m, p,
   mt, mr, mb, ml,
   pt, pr, pb, pl,
-}) => {
+}) {
   let className = '';
   if (center) className += 'text-center ';
   if (left) className += 'text-left ';
@@ -18,6 +18,6 @@ const boostrapStyleMaker = ({
   if (pb) className += `pb-${pb} `;
   if (pl) className += `pl-${pl} `;
   return className.trim();
-};
+}
 
 export default boostrapStyleMaker;
