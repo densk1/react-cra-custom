@@ -7,8 +7,11 @@ function Container({
 }) {
   const isFluid = fluid ? 'container-fluid' : 'container';
   return (
-    <div className={`${isFluid} ${className} ${styleMaker(rest)}`.trim()}
-      style={img ?{
+    <div
+      className={
+        `${isFluid} ${className} ${styleMaker(rest)}`.trim()
+      }
+      style={img ? {
         backgroundImage: `url(${img})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
@@ -17,6 +20,7 @@ function Container({
     >
       {children}
     </div>
+
   );
 }
 
@@ -24,10 +28,12 @@ Container.displayName = 'Container';
 Container.defaultProps = {
   fluid: false,
   className: '',
+  img: '',
 };
 Container.propTypes = {
   children: node.isRequired,
   className: string,
+  img: string,
   fluid: bool,
 };
 
