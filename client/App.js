@@ -20,22 +20,22 @@ const linkArray = [
 ];
 
 function App() {
-  return (
-    <Fragment>
-      <BrowserRouter basename="/" >
-        <Fragment>
-          <NavBar linkArray={linkArray} />
-          <Switch>
-            <Route exact path="/foo" component={Foo} />
-            <Route exact path="/bar" component={Bar} />
-          </Switch>
-          <Switch>
-            <Route path="/" component={Footer} />
-          </Switch>
-        </Fragment>
-      </BrowserRouter>
-    </Fragment>
-  );
+return (
+<Fragment>
+<BrowserRouter basename="/" >
+<Fragment>
+<NavBar linkArray={linkArray} />
+<Switch>
+<Route exact path="/foo" component={Foo} />
+<Route exact path="/bar" component={Bar} />
+</Switch>
+<Switch>
+<Route path="/" component={Footer} />
+</Switch>
+</Fragment>
+</BrowserRouter>
+</Fragment>
+);
 }
 
 export default App;
