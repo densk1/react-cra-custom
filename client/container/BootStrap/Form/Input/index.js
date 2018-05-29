@@ -17,11 +17,20 @@ const Input = ({
     { label &&
       <label htmlFor={name} className="text-muted small mb-0">
         {label && label}
+        <input
+          type={type}
+          name={name}
+          id={name}
+          className="form-control"
+          onChange={onChange}
+          value={value}
+          placeholder={placeholder}
+        />
+        {helper && <small className="form-text text-muted">{helperText}</small>}
+        {error && <small className="form-text text-muted text-danger">{errorText}</small>}
       </label>
     }
-    <input type={type} name={name} id={name} className="form-control" onChange={onChange} value={value} placeholder={placeholder} />
-    {helper && <small className="form-text text-muted">{helperText}</small>}
-    {error && <small className="form-text text-muted text-danger">{errorText}</small>}
+
   </div>
 );
 
@@ -48,5 +57,3 @@ Input.propTypes = {
 };
 
 export default Input;
-
-/*FormField[ label. placeholder. name. type. onChange. helper. helperText. error. errorText. value.] */

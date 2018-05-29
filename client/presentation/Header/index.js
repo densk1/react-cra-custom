@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Container from '../../container/BootStrap/Container';
 import Col from '../../container/BootStrap/Col';
@@ -14,7 +13,6 @@ function Header() {
             <Row pt="5" pb="5">
               <Col sm="6" />
               <Col className="bg-white" sm="6">Booking Widget</Col>
-
             </Row>
           </Container>
         </Col>
