@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { renderToString } from 'react-dom/server';
 import App from '../../client/App';
 import fs from 'fs';
@@ -28,4 +28,4 @@ export default handleSSR;
   Not yet imported into the server
   Add in Render to String.
 */
-// https://github.com/babel/example-node-server
+// https://github.com/babel/example-node-server*/
