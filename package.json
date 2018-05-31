@@ -65,11 +65,11 @@
     "build:server": "NODE_ENV=production babel server -d dist --presets env",
     "start": "node scripts/start.js",
     "client": "node scripts/start.js",
-    "build:client": "NODE_ENV=production node scripts/build.js && npm run bbl:build",
+    "build:client": "NODE_ENV=production node scripts/build.js",
     "build": "npm run build:client && npm run build:server",
     "test": "node scripts/test.js --env=jsdom",
-    "server": "NODE_ENV=production nodemon --watch server server/index.js --exec babel-node --presets env,react-app",
-    "production": "NODE_ENV=production nodemon dist/index.js"
+    "server": "nodemon --watch server server/index.js --exec babel-node --presets env,react-app",
+    "production": "NODE_ENV=production nodemon --watch dist dist/index.js --exec babel-node --presets env,react-app"
   },
   "jest": {
     "collectCoverageFrom": [

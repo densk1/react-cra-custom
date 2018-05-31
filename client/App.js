@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 import {
-  BrowserRouter,
-  ServerRouter,
   Route,
   Switch,
 } from 'react-router-dom';
