@@ -12,12 +12,15 @@ function Header() {
           <Container fluid pt="5" pb="5" p="0" mt="5">
             <Row pt="5" pb="5">
               <Col sm="6" />
-              <Col className="bg-white" sm="6">Booking Widget</Col>
+              <Col className="bg-white" sm="6">
+                Booking Widget
+              </Col>
             </Row>
           </Container>
         </Col>
       </Row>
     </Container>
+
   );
 }
 

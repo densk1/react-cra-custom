@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react';
 import {
-  BrowserRouter,
   Route,
   Switch,
 } from 'react-router-dom';
-import './App.scss';
 
 import NavBar from './presentation/NavBar';
 import Header from './presentation/Header';
@@ -22,18 +20,14 @@ const linkArray = [
 function App() {
   return (
     <Fragment>
-      <BrowserRouter basename="/" >
-        <Fragment>
-          <NavBar linkArray={linkArray} />
-          <Switch>
-            <Route exact path="/foo" component={Foo} />
-            <Route exact path="/bar" component={Bar} />
-          </Switch>
-          <Switch>
-            <Route path="/" component={Footer} />
-          </Switch>
-        </Fragment>
-      </BrowserRouter>
+      <NavBar linkArray={linkArray} />
+      <Switch>
+        <Route exact path="/foo" component={Foo} />
+        <Route exact path="/bar" component={Bar} />
+      </Switch>
+      <Switch>
+        <Route path="/" component={Footer} />
+      </Switch>
     </Fragment>
   );
 }
