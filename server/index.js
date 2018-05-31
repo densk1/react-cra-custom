@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 
 
 // ENV VARIABLES
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 // console.log("process.env", process.env);
 
 // CORS
