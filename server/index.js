@@ -13,7 +13,7 @@ dotenv.config();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan'); // => Request logging
-// const cors = require('./config/cors');
+
 const path = require('path');
 
 
@@ -21,22 +21,21 @@ const path = require('path');
 if (process.env.NODE_ENV === 'production') {
   app.use('/static', express.static(path.join(__dirname, '../build/static')));
   app.use('/img', express.static(path.join(__dirname, '../build/img')));
+} else {
+  const cors = require('./config/cors');
+  app.use(cors);
 }
-// app.use(cors);
+ 
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json());
-
-
 
 // DATABASE
 
 
 // ENV VARIABLES
-const PORT = process.env.PORT || 5001;
-// console.log("process.env", process.env);
+const PORT = process.env.PORT || 5000;
 
-// CORS
 
 app.all('/api', (req, res) => res.status(404).send('Api not yet implemented!'));
 
