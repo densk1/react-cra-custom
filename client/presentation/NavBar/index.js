@@ -8,6 +8,7 @@ class NavBar extends Component {
   static defaultProps = {
     linkArray: [{ label: 'Label', route: '/route/' }],
     ctaButtonText: '',
+    logo: '',
   };
   static propTypes = {
     linkArray: arrayOf(shape({
@@ -15,15 +16,16 @@ class NavBar extends Component {
       route: string.isRequired,
     })),
     ctaButtonText: string,
+    logo: string,
   };
   constructor(props) {
     super(props);
     this.state = {
     };
   }
-  createNavItems = ({ label, route }, key) => (
+  createNavItems = ({ label, path }, key) => (
     <li key={key} className="nav-item">
-      <NavLink to={route} className="nav-link">{label}</NavLink>
+      <NavLink to={path} className="nav-link">{label}</NavLink>
     </li>
   )
   createCTAButton = cta => (
@@ -39,13 +41,14 @@ class NavBar extends Component {
   )
   render() {
     const {
+      logo,
       linkArray,
       ctaButtonText,
     } = this.props;
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-indian">
+      <nav className="navbar navbar-expand-sm navbar-light bg-white">
         <Link to="/" className="navbar-brand">
-          Bootstrap
+          {logo ? <img className="navbar-brand" src={logo} alt="logo" style={{ height: '40px' }} /> : 'Bootstrap' }
         </Link>
         <button type="button" className="navbar-toggler">
           <span className="navbar-toggler-icon" />

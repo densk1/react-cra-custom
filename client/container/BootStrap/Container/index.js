@@ -1,9 +1,9 @@
 import React from 'react';
-import { bool, node, string } from 'prop-types';
+import { bool, node, string, objectOf } from 'prop-types';
 import styleMaker from '../utils/bootstrapStyleMaker';
 
 function Container({
-  fluid, children, className, img, ...rest
+  fluid, children, className, img, style, ...rest
 }) {
   const isFluid = fluid ? 'container-fluid' : 'container';
   return (
@@ -11,12 +11,13 @@ function Container({
       className={
         `${isFluid} ${className} ${styleMaker(rest)}`.trim()
       }
-      style={img ? {
-        backgroundImage: `url(${img})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      } : {}}
+      style={{
+        backgroundImage: img ? `url(${img})` : '',
+        backgroundPosition: img ? 'center' : '',
+        backgroundSize: img ? 'cover' : '',
+        backgroundRepeat: img ? 'no-repeat' : '',
+        ...style,
+      }}
     >
       {children}
     </div>
@@ -29,12 +30,14 @@ Container.defaultProps = {
   fluid: false,
   className: '',
   img: '',
+  style: {},
 };
 Container.propTypes = {
   children: node.isRequired,
   className: string,
   img: string,
   fluid: bool,
+  style: objectOf({}),
 };
 
 export default Container;

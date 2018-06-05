@@ -7,7 +7,7 @@ https://getbootstrap.com/docs/4.0/getting-started/theming/
 $theme-colors: (
   "indian": #cd5c5c,
   "orange": #ffa500,
-  "gold": #ffd700
+  "gold": #C28535,
 );
 
 
@@ -19,7 +19,7 @@ $theme-colors: map-remove($theme-colors, "success", "info", "danger");
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 .form-control:focus, .form-control:active {
-  border-color: indianred;
+  border-color: #C28535;
   box-shadow: 0px 0px 0px 0px rgba(205,92,92,0.4);
 }
 

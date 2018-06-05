@@ -14,8 +14,8 @@ const Input = ({
   value,
 }) => (
   <div className="form-group">
-    { label &&
-      <label htmlFor={name} className="text-muted small mb-0">
+    { (label || placeholder) &&
+      <label htmlFor={name} className="text-muted small mb-0 w-100">
         {label && label}
         <input
           type={type}

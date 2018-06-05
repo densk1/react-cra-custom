@@ -9,21 +9,24 @@ import Header from './presentation/Header';
 import Footer from './presentation/Footer';
 import Form from './container/BootStrap/Form';
 
-const Foo = () => <Form />;
-const Bar = () => <Header />;
-
 const linkArray = [
-  { label: 'Foo', route: '/foo' },
-  { label: 'Bar', route: '/bar' },
+  { label: 'Rooms', path: '/rooms', component: Form },
+  { label: 'Weddings', path: '/weddings', component: Form },
+  { label: 'Conference', path: '/conference', component: Form },
+  { label: 'Food', path: '/food', component: Form },
+  { label: 'Todo', path: '/to-do', component: Form },
+  { label: 'Contact', path: '/contact', component: Form },
 ];
 
 function App() {
   return (
     <Fragment>
-      <NavBar linkArray={linkArray} />
+      <NavBar linkArray={linkArray} logo="/img/amhLogo.png" />
       <Switch>
-        <Route exact path="/foo" component={Foo} />
-        <Route exact path="/bar" component={Bar} />
+        <Route exact path="/" component={Header} />
+        {
+          linkArray.map(d => <Route key={d.path} exact {...d} />)
+        }
       </Switch>
       <Switch>
         <Route path="/" component={Footer} />
