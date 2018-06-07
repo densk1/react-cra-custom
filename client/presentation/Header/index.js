@@ -49,7 +49,6 @@ function Header() {
                   <Input
                     className="w-100"
                     placeholder="Arrival Date..."
-                    name
                     type="text"
                     onChange={() => {}}
                     helper
@@ -64,7 +63,6 @@ function Header() {
                   <Input
                     className="w-100"
                     placeholder="No. of Nights..."
-                    name
                     type="number"
                     onChange={() => {}}
                     helper
@@ -77,7 +75,6 @@ function Header() {
                   <Input
                     className="w-100"
                     placeholder="No. of Guests..."
-                    name
                     type="number"
                     onChange={() => {}}
                     helper
