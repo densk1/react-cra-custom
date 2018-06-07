@@ -7,10 +7,10 @@ import {
   StaticRouter,
 } from 'react-router-dom';
 import path from 'path';
-import App from '../../client/App';
+import App from '../../app/App';
 
 const handleSSR = (req, res) => {
-  fs.readFile(path.join(__dirname, '..', '..', 'build', 'index.html'), 'utf8', (error, data) => {
+  fs.readFile(path.join(__dirname, '../../index.html'), 'utf8', (error, data) => {
     if (error) throw error;
     const reactString = renderToString(
       <StaticRouter location={req.url} context={{}}>

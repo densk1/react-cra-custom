@@ -62,16 +62,19 @@
   },
   "scripts": {
     "bbl": "NODE_ENV=development babel-node server/index.js --presets env",
-    "build:server": "NODE_ENV=production babel server -d dist --presets env",
+    "build:server": "NODE_ENV=production babel server -d build/server --presets env",
     "start": "concurrently -p [{index}][{name}] -c green.bold,blue.bold,magenta.bold,red.bold,yellow.bold,black.bold -n \"SERVER,CLIENT, MYSQL,  TEST\" \"npm run server\" \"npm run client\" \"npm run mysql\" ",
     "client": "node scripts/start.js",
+    "build:app": "NODE_ENV=production babel client -d build/app --presets env,react-app",
+
     "mysql": "ssh -L 3306:localhost:3306 root@do",
     "build:client": "NODE_ENV=production node scripts/build.js",
-    "build": "npm run build:client && npm run build:server",
+    "build": "npm run build:client && npm run build:server && npm run build:app",
     "test": "node scripts/test.js --env=jsdom",
     "server": "NODE_ENV=development nodemon --watch server server/index.js --exec babel-node --presets env,react-app",
-    "production": "NODE_ENV=production nodemon --watch dist dist/index.js --exec babel-node --presets env,react-app"
+    "production": "NODE_ENV=production nodemon --watch build/server build/server/index.js"
   },
+  "proxy": "http://localhost:5000",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
