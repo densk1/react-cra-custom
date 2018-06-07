@@ -9,7 +9,7 @@ $theme-colors: (
   "orange": #ffa500,
   "gold": #C28535,
 );
-
+$body-bg: lighten(#d3d3d3,10%);
 
 /*
 // REMOVE THEME COLORS
@@ -31,6 +31,4 @@ $theme-colors: map-remove($theme-colors, "success", "info", "danger");
   - Components
       - Border Radius and component styles
   - Wedding Photo style
-  
-
 */
